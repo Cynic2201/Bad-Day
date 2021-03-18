@@ -7,6 +7,9 @@ h2 {
 p {
     color: #979797;
 }
+select {
+    width:100%;
+}
 .navBar{
     overflow:hidden;
     background-color:#004d99;
@@ -18,18 +21,54 @@ p {
     padding: 13px 16px;
     text-decoration: none;
     font-size: 17px;
-  }
-  .navBar a:hover {
+}
+.bottomBar {
+    overflow:hidden;
+    position:fixed;
+    background-color:#004d99;
+    height: 5%;
+    width:100%;
+    bottom:0;
+    left:0;
+}
+.navBar a:hover {
     background-color:#00376e;
   }
-  .alignForm {
+
+.alignForm {
+    color: #979797;
     float:left;
+    text-align:right;
     display:inline;
+    padding-top:5%;
     width:49%;
-  }
-  #locationButton {
-    align:center;
-  }
-  #register {
+    line-height:2;
+}
+input, select {
+    margin-top:1.2ex;
+    margin-bottom:0.4ex;
+}
+input[type=checkbox] {
+    margin-top:1.2ex;
+    margin-bottom:1.4ex;
+    width: 15px;
+    height: 15px;
+}
+.leftDiv {
+    float:left;
+    text-align:right;
+    display:inline;
+    padding-left:30%;
+}
+.rightDiv {
+    float:right;
+    text-align:left;
+    display:inline;
+    padding-right:30%;
+}
+#centerButton {
+    text-align:center;
+}
+#register {
       float:right;
-  }
+}
