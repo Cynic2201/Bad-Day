@@ -1,5 +1,8 @@
 h1 {
-    color: #4c4c4c;  
+    color: #4c4c4c;
+    float:center;
+    text-align:center; 
+     
 }
 p {
     color: #979797;
@@ -21,7 +24,7 @@ select {
 }
 .bottomBar {
     overflow:hidden;
-    position:absolute;
+    position:fixed;
     background-color:#004d99;
     height: 5%;
     width:100%;
@@ -36,7 +39,7 @@ select {
     float:left;
     text-align:right;
     display:inline;
-    padding-top:5%;
+    margin-top:5%;
     width:49%;
     line-height:2;
 }
@@ -62,9 +65,25 @@ input[type=checkbox] {
     display:inline;
     padding-right:30%;
 }
+.reportBody {
+    display:inline-block;
+    margin-top:10px;
+    margin-left:10%;
+    margin-right:10%;
+    margin-bottom:6%;
+    width:80%;
+    height:60%;
+    outline: 2px solid black;
+}
 #centerButton {
     text-align:center;
 }
 #register {
-      float:right;
+    float:right;
+}
+#profileForm {
+    border-right: 2px solid #4c4c4c;
+}
+#statsForm {
+    border-left: 2px solid #4c4c4
 }

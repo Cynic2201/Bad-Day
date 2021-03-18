@@ -2,7 +2,7 @@
 <head>
     <meta charset="utf-8">
     <title>Bad Days: statistics report</title>
-    <link rel="stylesheet" href="./badday.css" type="text/css"/>
+    <link rel="stylesheet" href="./report.css" type="text/css"/>
 </head>
 <div class="navBar">
     <a href="index.html">Home</a>
@@ -10,21 +10,47 @@
     <a id="register" href="register.html">Login/Signup</a>
 </div>
 <body>
-    <h1>This page is for the statistics report</h1>
+    <form class="alignForm" id="profileForm">
+        <h1>Load/Save Profile</h1>
+        <div class="leftDiv">
+            <label>Select Profile</label><br />
+            <label>Profile Name: </label><br />
+            <label>Age: </label><br />
+            <label>Location: </label><br />
+        </div>
+        <div class="rightDiv">
+        <select>
+            <option value="example1">example1</option>
+            <option value="example2">example2</option>
+            <option value="example3">example3</option>
+            <option value="example4">example4</option>
+        </select><br /><input type=text name="profileName"><br />
+        <input type="text" name="age"><br />
+        <input type="text" name="location"><br />
+        <input type="button" name="locationFinder" value="Find My Location"><br />
+        <input type="submit" id="centerButton"  name="saveProfile" value="Save Profile">
+        </div>
+    </form>
+    <form class="alignForm" id="statsForm">
+        <h1>Stats</h1>
+        <div class="leftDiv">
+            <label>Natural Disasters</label><br />
+            <label>Diseases and Illnesses</label><br />
+            <label>Crimes</label><br />
+            <label>Vehicle Accidents</label><br />
+            <label>Unnatural Disasters</label><br />
+        </div>
+        <div class="rightDiv">
+        <input type="checkbox" name="checkNatural" value="checkNatural"><br />
+        <input type="checkbox" name="checkDisease" value="checkDisease"><br />
+        <input type="checkbox" name="checkCrime" value="checkCrime"><br />
+        <input type="checkbox" name="checkAccident" value="checkAccident"><br />
+        <input type="checkbox" name="checkUnnatural" value="checkUnnatural"><br />
+        <input type="submit" id="centerButton"  name="getStats" value="Get Stats">
+        </div>
+    </form>
+    <div class="alignForm"> <label>Search: </label><input type="text" name="searchReports"></div></div><br />
+    <div class="reportBody"></div>
+    <div class="bottomBar"></div>
 </body>
-<form class="reportForm">
-    <label>Select Profile</label>
-    <select>
-        <option value="example1">example1</option>
-        <option value="example2">example2</option>
-        <option value="example3">example3</option>
-        <option value="example4">example4</option>
-    </select><br />
-    <label>Profile Name: </label><input type=text name="profileName"><br />
-    <label>Age: </label><input type=text name="age"><br />
-    <label>Location: </label><input type=text name="location"><br />
-    <input type=button id="locationButton" name="locationFinder" value="Find My Location"><br />
-    
-</form>
-<form class="reportForm"></form>
 </html>
