@@ -1,0 +1,99 @@
+h1 {
+    color: #4c4c4c;
+    float: center;
+    text-align: center;
+}
+
+h2 {
+  font-size: 24px;
+}
+
+h3 {
+    color: #4c4c4c;
+    float: center;
+    text-align: center;
+}
+
+p {
+    color: #979797;
+}
+select {
+    width:100%;
+}
+.navBar{
+    overflow:hidden;
+    background-color:#004d99;
+}
+.navBar a {
+    float: left;
+    color: white;
+    text-align: center;
+    padding: 13px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+.bottomBar {
+    overflow:hidden;
+    position:fixed;
+    background-color:#004d99;
+    height: 5%;
+    width:100%;
+    bottom:0;
+    left:0;
+}
+.navBar a:hover {
+    background-color:#00376e;
+  }
+
+.alignForm {
+    color: #979797;
+    float:left;
+    text-align:right;
+    display:inline;
+    margin-top:5%;
+    width:49%;
+    line-height:2;
+}
+input, select {
+    margin-top:1.2ex;
+    margin-bottom:0.4ex;
+}
+input[type=checkbox] {
+    margin-top:1.2ex;
+    margin-bottom:1.4ex;
+    width: 15px;
+    height: 15px;
+}
+.leftDiv {
+    float:left;
+    text-align:right;
+    display:inline;
+    padding-left:5%;
+}
+.rightDiv {
+    float:right;
+    text-align:left;
+    display:inline;
+    padding-right:60%;
+}
+.inputRightDiv {
+    float:right;
+    text-align:left;
+    display:inline;
+    padding-right:20%;
+}
+#loginForm {
+    border-right: 4px solid #4c4c4c;
+}
+#signupForm {
+    border-left: 4px solid #4c4c4c;
+}
+.center{
+    margin-left: 60%;
+}
+#centerButton {
+    text-align:center;
+}
+#register {
+      float:right;
+}
