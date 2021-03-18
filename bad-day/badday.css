@@ -19,6 +19,14 @@ p {
   .navBar a:hover {
     background-color:#00376e;
   }
+  .reportForm {
+    float:left;
+    display:inline;
+    width:49%;
+  }
+  #locationButton {
+    align:center;
+  }
   #register {
       float:right;
   }
