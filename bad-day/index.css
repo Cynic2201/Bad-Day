@@ -98,6 +98,88 @@ input[type=checkbox] {
       float:right;
 }
 
+.center-cropped {
+    object-fit: none;
+    object-position: center;
+    height: 94.75%;
+    width: 100%;
+  }  
+
+.container {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+  
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.container .btn1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 30%);
+    -ms-transform: translate(-50%, -50%);
+    background-color: #004d99;
+    color: white;
+    font-size: 36px;
+    padding: 32px 48px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.container .btn2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 180%);
+    -ms-transform: translate(-50%, -50%);
+    background-color: #004d99;
+    color: white;
+    font-size: 36px;
+    padding: 32px 48px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+  
+.container .btn:hover {
+    background-color: black;
+}
+
+.container .text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 58%);
+    color: white;
+    font-size: 48px;
+    padding: 32px 48px;
+    border-radius: 5px;
+}
+
+.container .title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -100%);
+    color: white;
+    font-size: 256px;
+    padding: 32px 48px;
+    border-radius: 5px;
+    white-space: nowrap;
+    text-shadow: 24px 24px #000000;
+}
+
 body{
     font-family: "Eras ITC", "Eras Light ITC",  sans-serif;
+}
+
+.container button:hover {
+    background-color: #00376e;
 }
