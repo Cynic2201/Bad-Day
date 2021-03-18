@@ -1,6 +1,9 @@
 h1 {
     color: #4c4c4c;  
 }
+h2 {
+  font-size: 24px;
+}
 p {
     color: #979797;
 }
@@ -19,7 +22,7 @@ p {
   .navBar a:hover {
     background-color:#00376e;
   }
-  .reportForm {
+  .alignForm {
     float:left;
     display:inline;
     width:49%;
