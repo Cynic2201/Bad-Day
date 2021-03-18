@@ -1,22 +1,26 @@
 h1 {
     color: #4c4c4c;
-    float:center;
-    text-align:center; 
-     
+    float: center;
+    text-align: center;
 }
+
 h2 {
-  font-size: 24px;
+    font-size: 24px;
 }
+
 p {
     color: #979797;
 }
+
 select {
-    width:100%;
+    width: 100%;
 }
-.navBar{
-    overflow:hidden;
-    background-color:#004d99;
+
+.navBar {
+    overflow: hidden;
+    background-color: #004d99;
 }
+
 .navBar a {
     float: left;
     color: white;
@@ -25,69 +29,80 @@ select {
     text-decoration: none;
     font-size: 17px;
 }
+
 .bottomBar {
-    overflow:hidden;
-    position:fixed;
-    background-color:#004d99;
+    overflow: hidden;
+    position: fixed;
+    background-color: #004d99;
     height: 5%;
-    width:100%;
-    bottom:0;
-    left:0;
+    width: 100%;
+    bottom: 0;
+    left: 0;
 }
+
 .navBar a:hover {
-    background-color:#00376e;
-  }
+    background-color: #00376e;
+}
 
 .alignForm {
     color: #979797;
-    float:left;
-    text-align:right;
-    display:inline;
-    margin-top:5%;
-    width:49%;
-    line-height:2;
+    float: left;
+    text-align: right;
+    display: inline;
+    margin-top: 5%;
+    width: 49%;
+    line-height: 2;
 }
+
 input, select {
-    margin-top:1.2ex;
-    margin-bottom:0.4ex;
+    margin-top: 1.2ex;
+    margin-bottom: 0.4ex;
 }
+
 input[type=checkbox] {
-    margin-top:1.2ex;
-    margin-bottom:1.4ex;
+    margin-top: 1.2ex;
+    margin-bottom: 1.4ex;
     width: 15px;
     height: 15px;
 }
+
 .leftDiv {
-    float:left;
-    text-align:right;
-    display:inline;
-    padding-left:30%;
+    float: left;
+    text-align: right;
+    display: inline;
+    padding-left: 30%;
 }
+
 .rightDiv {
-    float:right;
-    text-align:left;
-    display:inline;
-    padding-right:30%;
+    float: right;
+    text-align: left;
+    display: inline;
+    padding-right: 30%;
 }
+
 .reportBody {
-    display:inline-block;
-    margin-top:10px;
-    margin-left:10%;
-    margin-right:10%;
-    margin-bottom:6%;
-    width:80%;
-    height:60%;
+    display: inline-block;
+    margin-top: 10px;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 6%;
+    width: 80%;
+    height: 60%;
     outline: 2px solid black;
 }
+
 #centerButton {
-    text-align:center;
+    text-align: center;
 }
+
 #register {
-    float:right;
+    float: right;
 }
+
 #profileForm {
     border-right: 2px solid #4c4c4c;
 }
+
 #statsForm {
-    border-left: 2px solid #4c4c4
+    border-left: 2px solid #4c4c4c;
 }
