@@ -48,12 +48,26 @@
             <input type="checkbox" name="checkCrime" value="checkCrime"><br />
             <input type="checkbox" name="checkAccident" value="checkAccident"><br />
             <input type="checkbox" name="checkUnnatural" value="checkUnnatural"><br />
-            <input type="submit" id="centerButton" name="getStats" value="Get Stats">
+            <script type="text/javascript">
+                function toggle_visibility(id) {
+                    var e = document.getElementById(id);
+                    if (e.style.display == 'block')
+                        e.style.display = 'none';
+                    else
+                        e.style.display = 'block';
+                }
+            </script>
+            <input type="button" id="centerButton" name="getStats" value="Get Stats"
+                onclick="toggle_visibility('stat'); toggle_visibility('stat2'); toggle_visibility('stat3');">
         </div>
     </form>
     <div class="alignForm"> <label>Search: </label><input type="text" name="searchReports"></div>
     </div><br />
-    <div class="reportBody"></div>
+    <div class="reportBody">
+        <p id="stat">Flu | Chance of experiencing: 13% | Chance of death: 0.002%</p><br />
+        <p id="stat2">Common Cold | Chance of experiencing: 20% | Chance of death: 0.00001%</p><br />
+        <p id="stat3">Chicken Pox | Chance of experiencing: 35% | Chance of death: 0.0003%</p><br />
+    </div>
     <div class="bottomBar"></div>
 </body>
 
