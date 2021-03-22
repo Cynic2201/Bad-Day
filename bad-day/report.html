@@ -21,11 +21,9 @@
             <label>Location: </label><br />
         </div>
         <div class="rightDiv">
-            <select>
-                <option value="example1">example1</option>
-                <option value="example2">example2</option>
-                <option value="example3">example3</option>
-                <option value="example4">example4</option>
+            <select id="selectProfile">
+                <option value="ncGroup">North Carolina (generic)</option>
+                <option value="gaGroup">Georgia (generic)</option>
             </select><br /><input type=text name="profileName"><br />
             <input type="text" name="age"><br />
             <input type="text" name="location"><br />
@@ -56,17 +54,38 @@
                     else
                         e.style.display = 'block';
                 }
+                function hide_all() {
+                        var e = document.getElementsByTagName("P");
+                        for (i=0; i < e.length; i++) {
+                            e[i].style.display = 'none';
+                        }
+                }
             </script>
             <input type="button" id="centerButton" name="getStats" value="Get Stats"
-                onclick="toggle_visibility('stat'); toggle_visibility('stat2'); toggle_visibility('stat3');">
+                onclick="
+                hide_all();
+                var s = document.querySelector('#selectProfile');
+                if (s.selectedOptions[0].value == 'ncGroup') {
+                    toggle_visibility('nc'); 
+                    toggle_visibility('nc2'); 
+                    toggle_visibility('nc3');
+                }
+                else if (s.selectedOptions[0].value =='gaGroup') {
+                    toggle_visibility('ga'); 
+                    toggle_visibility('ga2'); 
+                    toggle_visibility('ga3');
+                }">
         </div>
     </form>
     <div class="alignForm"> <label>Search: </label><input type="text" name="searchReports"></div>
     </div><br />
     <div class="reportBody">
-        <p id="stat">Flu | Chance of experiencing: 13% | Chance of death: 0.002%</p><br />
-        <p id="stat2">Common Cold | Chance of experiencing: 20% | Chance of death: 0.00001%</p><br />
-        <p id="stat3">Chicken Pox | Chance of experiencing: 35% | Chance of death: 0.0003%</p><br />
+        <p id="nc">Flu in location North Carolina | Chance of experiencing: 13% | Chance of death: 0.002%<br /></p>
+        <p id="nc2">Common Cold in location North Carolina | Chance of experiencing: 20% | Chance of death: 0.00001%<br /></p>
+        <p id="nc3">Chicken Pox in location North Carolina | Chance of experiencing: 35% | Chance of death: 0.0003%<br /></p>
+        <p id="ga">Flu in location Georgia | Chance of experiencing: 12% | Chance of death: 0.0015%<br /></p>
+        <p id="ga2">Common Cold in location Georgia | Chance of experiencing: 21% | Chance of death: 0.000008%<br /></p>
+        <p id="ga3">Chicken Pox in location Georgia | Chance of experiencing: 33% | Chance of death: 0.0004%<br /></p>
     </div>
     <div class="bottomBar"></div>
 </body>
