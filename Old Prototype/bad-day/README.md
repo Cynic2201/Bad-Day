@@ -1,1 +1,0 @@
-Git Repository for the Bad Day app from Team^2
