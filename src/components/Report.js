@@ -34,7 +34,7 @@ class Report extends Component {
     createCheckboxes = () => DISASTERS.map(this.createCheckbox);
     render() {
         return (
-            <>
+            <> 
                 <form className="alignForm">
                     <div className="leftDiv">
                         <label>Select Profile :</label><br />
@@ -64,9 +64,9 @@ class Report extends Component {
                         <button type="submit">Get Stats</button>
                     </div>
                 </form>
-                <div className="reportBody">
-
-                </div>
+                <body className="reportBody">
+                    
+                </body>
                 <div className="bottomBar" />
             </>
         )
