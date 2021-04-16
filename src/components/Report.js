@@ -55,12 +55,8 @@ const Report = () => {
                     <label>Unnatural Disasters :</label><br />
                 </div>
                 <div className="rightDiv">
-                    <input type="checkbox" name="checkNatural" value="checkNatural" /><br />
-                    <input type="checkbox" name="checkDisease" value="checkDisease" /><br />
-                    <input type="checkbox" name="checkCrime" value="checkCrime" /><br />
-                    <input type="checkbox" name="checkAccident" value="checkAccident" /><br />
-                    <input type="checkbox" name="checkUnnatural" value="checkUnnatural" /><br />
-                    <input type="submit" value="Get Stats" />
+                    {this.createCheckboxes()}
+                    <button type="submit">Get Stats</button>
                 </div>
             </form>
             <div className="reportBody">
