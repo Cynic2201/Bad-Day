@@ -24,17 +24,8 @@ select {
     background-color: #004d99;
 }
 
-.navBarItem {
+.navBar a {
     float: left;
-    color: white;
-    text-align: center;
-    padding: 0.8% 16px;
-    text-decoration: none;
-    font-size: 17px;
-}
-
-#register {
-    float: right;
     color: white;
     text-align: center;
     padding: 0.8% 16px;
@@ -105,6 +96,10 @@ input[type=checkbox] {
 
 #centerButton {
     text-align: center;
+}
+
+#register {
+    float: right;
 }
 
 #profileForm {
