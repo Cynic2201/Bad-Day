@@ -2,29 +2,30 @@ import Checkbox from "./Checkbox";
 
 const DISASTERS = ["Natural", "Disease", "Crime", "Accident"];
 
-const handleCheckboxSubmit = formSubmitEvent => {
-    formSubmitEvent.preventDefault();
-    //function to organize what data to present
-};
 
-const handleProfileSave = formSubmitEvent => {
-    formSubmitEvent.preventDefault();
-    //function to organize what data to present
-};
-
-const createCheckbox = disaster => (
-    <>
-    <Checkbox
-        label={disaster}
-        key={disaster}
-    />
-    <br />
-    </>
-);
-
-const createCheckboxes = () => DISASTERS.map(this.createCheckbox);
 
 const Report = () => {
+    const handleCheckboxSubmit = formSubmitEvent => {
+        formSubmitEvent.preventDefault();
+        //function to organize what data to present
+    };
+    
+    const handleProfileSave = formSubmitEvent => {
+        formSubmitEvent.preventDefault();
+        //function to organize what data to present
+    };
+    
+    const createCheckbox = disaster => (
+        <>
+        <Checkbox
+            label={disaster}
+            key={disaster}
+        />
+        <br />
+        </>
+    );
+    
+    const createCheckboxes = () => DISASTERS.map(this.createCheckbox);
     return (
         <>
             <form className="alignForm" id="profileForm">
