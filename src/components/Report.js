@@ -65,7 +65,7 @@ class Report extends Component {
                     </div>
                 </form>
                 <body className="reportBody">
-                    
+                        <label>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac elit sit amet augue porta posuere nec eu velit. Vivamus ultrices, ante eu consequat dictum, odio ipsum viverra augue, nec euismod orci nisl vitae turpis. In ornare hendrerit sem ac congue. Pellentesque pellentesque urna nec elit tempor pellentesque. Nam hendrerit nisi id leo dictum rutrum sed quis mi. Etiam ac mi eu purus feugiat accumsan. Curabitur dignissim lacus a elementum varius. Aliquam vel orci lectus. Nullam a nunc turpis. Fusce at aliquam ligula. Aliquam accumsan ultrices sapien convallis ultricies. Quisque ultrices ipsum fermentum, vestibulum eros sed, luctus mauris. Ut ac ullamcorper tortor, eget malesuada purus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</label><br />
                 </body>
                 <div className="bottomBar" />
             </>
