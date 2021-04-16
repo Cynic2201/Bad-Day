@@ -16,6 +16,11 @@ class Report extends Component {
         //function to organize what data to present
     };
 
+    handleProfileSubmit = formSubmitEvent => {
+        formSubmitEvent.preventDefault();
+        //function to organize what data to present
+    };
+
     createCheckbox = disaster => (
         <>
             <Checkbox
@@ -30,12 +35,12 @@ class Report extends Component {
     render() {
         return (
             <>
-                <form className="alignForm" id="profileForm">
+                <form className="alignForm">
                     <div className="leftDiv">
-                        <label>Select Profile</label><br />
-                        <label>Profile Name: </label><br />
-                        <label>Age: </label><br />
-                        <label>Location: </label><br />
+                        <label>Select Profile :</label><br />
+                        <label>Profile Name :</label><br />
+                        <label>Age :</label><br />
+                        <label>Location :</label><br />
                     </div>
                     <div className="rightDiv">
                         <select id="selectProfile">
@@ -47,7 +52,7 @@ class Report extends Component {
                         <input type="submit" id="centerButton" value="Save Profile" />
                     </div>
                 </form>
-                <form className="alignForm" id="statsForm">
+                <form className="alignForm">
                     <div class="leftDiv">
                         <label>Natural Disasters :</label><br />
                         <label>Diseases and Illnesses :</label><br />

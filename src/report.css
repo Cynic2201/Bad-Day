@@ -30,7 +30,7 @@ select {
     text-align: center;
     padding: 0.8% 16px;
     text-decoration: none;
-    font-size: 17px;
+    font-size: 18px;
 }
 
 #register {
@@ -39,7 +39,7 @@ select {
     text-align: center;
     padding: 0.8% 16px;
     text-decoration: none;
-    font-size: 17px;
+    font-size: 18px;
 }
 
 .bottomBar {
@@ -50,10 +50,6 @@ select {
     width: 100%;
     bottom: 0;
     left: 0;
-}
-
-.navBar a:hover {
-    background-color: #00376e;
 }
 
 .alignForm {
@@ -71,18 +67,12 @@ input, select {
     margin-bottom: 0.4ex;
 }
 
-input[type=checkbox] {
-    margin-top: 1.2ex;
-    margin-bottom: 1.4ex;
-    width: 15px;
-    height: 15px;
-}
-
 .leftDiv {
     float: left;
     text-align: right;
     display: inline;
     padding-left: 30%;
+    line-height: 220%;
 }
 
 .rightDiv {
@@ -105,14 +95,6 @@ input[type=checkbox] {
 
 #centerButton {
     text-align: center;
-}
-
-#profileForm {
-    border-right: 2px solid #4c4c4c;
-}
-
-#statsForm {
-    border-left: 2px solid #4c4c4c;
 }
 
 body{
