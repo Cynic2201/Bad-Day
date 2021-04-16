@@ -14,11 +14,11 @@ const Home = () => {
                     <div class="title">BAD DAY</div>
                     <img class="center-cropped" src="images\2923.jpg" />
                     <Link to="/LoginSignup">
-                    <button class="btn1">Login/Sign-Up</button>
+                    <button class="btn1">LOGIN/SIGN-UP</button>
                     </Link>
                     <h1 class="text">Or</h1>
                     <Link to="/Report">
-                    <button class="btn2">Start Now</button>
+                    <button class="btn2">START NOW</button>
                     </Link>
                 </b>
             </div>
