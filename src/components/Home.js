@@ -1,6 +1,8 @@
+import {Link} from "react-router-dom";
+
 const Home = () => {
-    return <div>
-    <html>
+    return (
+    <div>
         <head>
             <title>Bad Days: Home Page</title>
             <link rel="stylesheet" href="./index.css" type="text/css" />
@@ -11,14 +13,18 @@ const Home = () => {
                 <b>
                     <div class="title">BAD DAY</div>
                     <img class="center-cropped" src="images\2923.jpg" />
-                    <button class="btn1" onclick="location.href='register.html';"><b>LOGIN/SIGN-UP</b></button>          
-                    <h1 class="text">OR</h1>
-                    <button class="btn2" onclick="location.href='report.html';"><b>START NOW</b></button>
+                    <Link to="/LoginSignup">
+                    <button class="btn1">Login/Sign-Up</button>
+                    </Link>
+                    <h1 class="text">Or</h1>
+                    <Link to="/Report">
+                    <button class="btn2">Start Now</button>
+                    </Link>
                 </b>
-            </div>     
+            </div>
         </body>
-    </html>
-</div>
+    </div>
+    )
 }
 
 export default Home;

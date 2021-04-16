@@ -19,7 +19,7 @@ const LoginSignup = () => {
                     <br></br>
                     <input type="text" id="email" name="email"></input><br></br>
                     <input type="text" id="password" name="password"></input><br></br>
-                    <input type="submit" value="LOGIN"></input><br></br>
+                    <input type="submit" value="Login"></input><br></br>
                 </div>
                 </div>
             </form>
@@ -43,7 +43,7 @@ const LoginSignup = () => {
                     <input type="text" id="email" name="email"></input><br></br>
                     <input type="text" id="password" name="password"></input><br></br>
                     <input type="text" id="lname" name="lname"></input><br></br>
-                    <input type="submit" value="SIGN-UP"></input><br></br>
+                    <input type="submit" value="Sign-Up"></input><br></br>
                 </div>
                 
             </form>
