@@ -41,10 +41,9 @@ class Report extends Component {
                         <select id="selectProfile">
 
                         </select><br />
-                        <input type="text" /><br />
-                        <input type="text" /><br />
+                        <input type="text" placeholder="name" /><br />
+                        <input type="text" placeholder="age" /><br />
                         <input type="text" placeholder="location" /><br />
-                        <input type="button" placeholder="Find My Location" /><br />
                         <input type="submit" id="centerButton" value="Save Profile" />
                     </div>
                 </form>
@@ -54,7 +53,6 @@ class Report extends Component {
                         <label>Diseases and Illnesses :</label><br />
                         <label>Crimes :</label><br />
                         <label>Vehicle Accidents :</label><br />
-                        <label>Unnatural Disasters :</label><br />
                     </div>
                     <div className="rightDiv">
                         {this.createCheckboxes()}
