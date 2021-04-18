@@ -19,20 +19,21 @@ connection.once('open', () => {
     console.log("MongoDB database connection established successfully");
 })
 
+// placeholders
+disaster = "Wildfire"
+state = "California"
+
 app.get("/", (req, res, next)=>{
     //Here are the option object in which arguments can be passed for the python_test.js.
     let options = {
         mode: 'text',
         pythonOptions: ['-u'], // get print results in real-time
-        args: ['shubhamk314'] //An argument which can be accessed in the script using sys.argv[1]
+        args: [disaster, state] //Argument (sys.argv[1])
     };
       
   
     PythonShell.run('FindStat.py', options, function (err, result){
           if (err) throw err;
-          // result is an array consisting of messages collected 
-          //during execution of script.
-          //console.log('result: ', result.toString());
           res.send(result.toString())
     });
 });
