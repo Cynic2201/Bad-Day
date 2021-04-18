@@ -75,6 +75,14 @@ input, select {
     line-height: 220%;
 }
 
+
+.leftDiv2 {
+    float: left;
+    text-align: right;
+    display: inline;
+    padding-left: 0%;
+    line-height: 220%;
+}
 .rightDiv {
     float: right;
     text-align: left;
@@ -82,13 +90,20 @@ input, select {
     padding-right: 30%;
 }
 
+.rightDiv2 {
+    float: right;
+    text-align: left;
+    display: inline;
+    padding-right: 75%;
+}
+
 .reportBody {
     display: inline-block;
     margin-top: 10px;
-    margin-left: 10%;
-    margin-right: 10%;
+    margin-left: 20%;
+    margin-right: 20%;
     margin-bottom: 6%;
-    width: 80%;
+    width: 60%;
     height: 60%;
     outline: 2px solid black;
 }
@@ -99,4 +114,20 @@ input, select {
 
 body{
     font-family: "Eras ITC", "Eras Light ITC",  sans-serif;
+}
+
+.title{
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    transform: translate(-50%, -100%);
+    font-size: 32px;
+    padding: 32px 48px;
+    border-radius: 5px;
+    color: white;
+    white-space: nowrap;
+}
+
+.info{
+
 }

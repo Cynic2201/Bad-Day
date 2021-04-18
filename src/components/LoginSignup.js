@@ -1,3 +1,5 @@
+import {Link} from "react-router-dom";
+
 const LoginSignup = () => {
     return <div>
     <html>
@@ -11,6 +13,7 @@ const LoginSignup = () => {
                 <div class = "center">
                 <div class="leftDiv">
                     <b><label for="login">Login</label></b><br></br>
+                    
                     <label for="email">Email:</label><br></br>
                     <label for="lname">Password:</label><br></br>
                 </div>
@@ -19,7 +22,9 @@ const LoginSignup = () => {
                     <br></br>
                     <input type="text" id="email" name="email"></input><br></br>
                     <input type="text" id="password" name="password"></input><br></br>
-                    <input type="submit" value="LOGIN"></input><br></br>
+                    <Link to="/Report">
+                    <input type="submit" value="Login"></input><br></br>
+                    </Link>
                 </div>
                 </div>
             </form>
@@ -43,7 +48,7 @@ const LoginSignup = () => {
                     <input type="text" id="email" name="email"></input><br></br>
                     <input type="text" id="password" name="password"></input><br></br>
                     <input type="text" id="lname" name="lname"></input><br></br>
-                    <input type="submit" value="SIGN-UP"></input><br></br>
+                    <input type="submit" value="Sign-Up"></input><br></br>
                 </div>
                 
             </form>

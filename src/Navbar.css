@@ -115,7 +115,7 @@ input[type=checkbox] {
 .center-cropped {
   object-fit: none;
   object-position: center;
-  height: 912px;
+  height: 94.75%;
   width: 100%;
 }  
 
@@ -197,3 +197,4 @@ body{
 .container button:hover {
   background-color: #00376e;
 }
+
