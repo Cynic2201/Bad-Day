@@ -14,8 +14,8 @@ def changeString(name):
 
 
 
-Disaster = "Wildfire";
-stateName = "California"
+Disaster = sys.argv[1]
+stateName = sys.argv[2]
     
 file =('US_FIPS_Codes.xls');
 state_df = pd.read_excel(file, header=1);
