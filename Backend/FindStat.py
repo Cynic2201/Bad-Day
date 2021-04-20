@@ -5,6 +5,7 @@ Created on Sun Apr 11 17:53:03 2021
 @author: sanch
 """
 
+import sys
 import pandas as pd
 
 
@@ -39,11 +40,9 @@ if len(stateFIPS) < 2:
 host = "https://api.census.gov/data/2019/pep/charagegroups?get=POP&for=state:{}".format(stateFIPS)
 df = pd.read_json(host)
 state_pop = int(df.iloc[1][0]);
-print("population: ", state_pop)
+
 
 chance_death = (deaths / state_pop) * 100
 chance_injure = (injuries / state_pop) * 100
     
-report = [chance_death, chance_injure]
-    
-print(report)
+print(chance_death)
