@@ -20,7 +20,7 @@ connection.once('open', () => {
 })
 
 // placeholders
-disaster = "Wildfire"
+disaster = "Cancer"
 state = "California"
 
 app.get("/", (req, res, next)=>{
@@ -32,13 +32,11 @@ app.get("/", (req, res, next)=>{
     };
       
   
-    PythonShell.run('FindStat.py', options, function (err, result){
+    PythonShell.run('FindDisease.py', options, function (err, result){
           if (err) throw err;
           res.send(result.toString())
     });
 });
-
-
 
 app.listen(port, () => {
     console.log("Server is running on Port: " + port);
