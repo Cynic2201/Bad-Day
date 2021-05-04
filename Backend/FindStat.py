@@ -41,8 +41,7 @@ host = "https://api.census.gov/data/2019/pep/charagegroups?get=POP&for=state:{}"
 df = pd.read_json(host)
 state_pop = int(df.iloc[1][0]);
 
-
 chance_death = (deaths / state_pop) * 100
 chance_injure = (injuries / state_pop) * 100
-    
+
 print(chance_death)
