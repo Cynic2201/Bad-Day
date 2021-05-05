@@ -1,7 +1,7 @@
 //Import express.js module and create its variable.
 const express=require('express');
 const app=express();
-  
+
 //Import PythonShell module.
 const {PythonShell} =require('python-shell');
   

@@ -1,11 +1,38 @@
 import React, { Component } from "react";
 import Checkbox from "./Checkbox";
 
-const DISASTERS = ["Natural", "Disease", "Crime", "Accident"];
-
-
+const DISASTERS = ["Natural", "Disease"];
 
 class Report extends Component {
+    
+    constructor(props) {
+        super(props);
+        this.state = {
+          error: null,
+          isLoaded: false,
+          items: []
+        };
+      }
+
+      componentDidMount() {
+        fetch("http://localhost:5000/")
+          .then(res => res.json())
+          .then(
+            (result) => {
+              this.setState({
+                isLoaded: true,
+                items: result.items
+              });
+            },
+            (error) => {
+              this.setState({
+                isLoaded: true,
+                error
+              });
+            }
+          )
+      }
+      
     handleCheckboxSubmit = formSubmitEvent => {
         formSubmitEvent.preventDefault();
         //function to organize what data to present
@@ -32,7 +59,11 @@ class Report extends Component {
     );
 
     createCheckboxes = () => DISASTERS.map(this.createCheckbox);
+    
+    display = () => fetch("http://localhost:5000/").then(res => res.text()).then(text => console.log(text));
+
     render() {
+        const { error, isLoaded, items } = this.state;
         return (
             <> 
             <h2 class="title">John Doe</h2>
@@ -57,8 +88,6 @@ class Report extends Component {
                     <div class="leftDiv2">
                         <label>Natural Disasters :</label><br />
                         <label>Diseases and Illnesses :</label><br />
-                        <label>Crimes :</label><br />
-                        <label>Vehicle Accidents :</label><br />
                     </div>
                     <div className="rightDiv2">
                         {this.createCheckboxes()}
@@ -66,7 +95,9 @@ class Report extends Component {
                     </div>
                 </form>
                 <body className="reportBody">
-                        <label class="info"></label><br />
+                        <label class="info">
+                        {items}
+                        </label><br />
                 </body>
                 <div className="bottomBar" />
             </>
