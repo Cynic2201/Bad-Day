@@ -1,7 +1,10 @@
+import axios from "axios";
 import React, { Component } from "react";
 import Checkbox from "./Checkbox";
 
 const DISASTERS = ["Natural", "Disease"];
+
+var test;
 
 class Report extends Component {
     
@@ -15,10 +18,11 @@ class Report extends Component {
       }
 
       componentDidMount() {
-        fetch("http://localhost:5000/")
+        fetch("http://localhost:5000/data")
           .then(res => res.json())
           .then(
             (result) => {
+                test = parseFloat(result)
               this.setState({
                 isLoaded: true,
                 items: result.items
@@ -60,7 +64,7 @@ class Report extends Component {
 
     createCheckboxes = () => DISASTERS.map(this.createCheckbox);
     
-    display = () => fetch("http://localhost:5000/").then(res => res.text()).then(text => console.log(text));
+    display = () => fetch("http://localhost:5000/data").then(res => res.text()).then(text => console.log(text));
 
     render() {
         return (
@@ -71,15 +75,15 @@ class Report extends Component {
                         <label>Select Profile :</label><br/>
                         <label>Profile Name :</label><br/>
                         <label>Age :</label><br/>
-                        <label>Location :</label><br/>
+                        <label>State :</label><br/>
                     </div>
                     <div className="rightDiv">
                         <select id="selectProfile">
                             <option>John Doe</option>
                         </select><br/>
-                        <input type="text" placeholder="name"/><br/>
+                        <input type="text" placeholder="name" id="Disaster"/><br/>
                         <input type="text" placeholder="age"/><br/>
-                        <input type="text" placeholder="location"/><br/>
+                        <input type="text" placeholder="state" id="State"/><br/>
                         <input type="submit" id="centerButton" value="Save Profile" />
                     </div>
                 </form>
@@ -90,18 +94,33 @@ class Report extends Component {
                     </div>
                     <div className="rightDiv2">
                         {this.createCheckboxes()}
-                        <button type="submit">Get Stats</button>
+                        <button onClick="sss()">Get Stats</button> 
                     </div>
                 </form>
                 <body className="reportBody">
                         <label class="info">
-                        {this.display()}
+                        {test}
                         </label><br />
                 </body>
                 <div className="bottomBar" />
+
+                <script>
+
+                </script>
+
             </>
         )
     }
+
+
+    sss(){
+        const data = {
+            username: document.getElementById('Disaster').value,
+            password: document.getElementById('State').value,
+        };
+        axios.post('/giraffe', data)}
+
+
 }
 
 export default Report;

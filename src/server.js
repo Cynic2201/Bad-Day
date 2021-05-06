@@ -23,7 +23,8 @@ connection.once('open', () => {
 disaster = "Cancer"
 state = "California"
 
-app.get("/", (req, res, next)=>{
+
+app.get("/data", (req, res, next)=>{
     //Here are the option object in which arguments can be passed for the python_test.js.
     let options = {
         mode: 'text',
@@ -36,6 +37,11 @@ app.get("/", (req, res, next)=>{
           if (err) throw err;
           res.send(result)
     });
+});
+
+app.post('giraffe', (req, res) => {
+    const { username, password } = req.body;
+    console.log(username)
 });
 
 app.listen(port, () => {
