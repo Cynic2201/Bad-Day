@@ -63,7 +63,6 @@ class Report extends Component {
     display = () => fetch("http://localhost:5000/").then(res => res.text()).then(text => console.log(text));
 
     render() {
-        const { error, isLoaded, items } = this.state;
         return (
             <> 
             <h2 class="title">John Doe</h2>
@@ -96,7 +95,7 @@ class Report extends Component {
                 </form>
                 <body className="reportBody">
                         <label class="info">
-                        {items}
+                        {this.display()}
                         </label><br />
                 </body>
                 <div className="bottomBar" />
