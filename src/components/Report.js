@@ -3,6 +3,8 @@ import Checkbox from "./Checkbox";
 
 const DISASTERS = ["Natural", "Disease"];
 
+var test;
+
 class Report extends Component {
     
     constructor(props) {
@@ -19,6 +21,7 @@ class Report extends Component {
           .then(res => res.json())
           .then(
             (result) => {
+                test = parseFloat(result)
               this.setState({
                 isLoaded: true,
                 items: result.items
@@ -95,7 +98,7 @@ class Report extends Component {
                 </form>
                 <body className="reportBody">
                         <label class="info">
-                        {this.display()}
+                        {test}
                         </label><br />
                 </body>
                 <div className="bottomBar" />
