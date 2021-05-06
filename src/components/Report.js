@@ -17,7 +17,7 @@ class Report extends Component {
       }
 
       componentDidMount() {
-        fetch("http://localhost:5000/")
+        fetch("http://localhost:5000/data")
           .then(res => res.json())
           .then(
             (result) => {
@@ -63,7 +63,7 @@ class Report extends Component {
 
     createCheckboxes = () => DISASTERS.map(this.createCheckbox);
     
-    display = () => fetch("http://localhost:5000/").then(res => res.text()).then(text => console.log(text));
+    display = () => fetch("http://localhost:5000/data").then(res => res.text()).then(text => console.log(text));
 
     render() {
         return (
@@ -93,7 +93,7 @@ class Report extends Component {
                     </div>
                     <div className="rightDiv2">
                         {this.createCheckboxes()}
-                        <button type="submit">Get Stats</button>
+                        <button type="submit">Get Stats</button> 
                     </div>
                 </form>
                 <body className="reportBody">
@@ -102,6 +102,7 @@ class Report extends Component {
                         </label><br />
                 </body>
                 <div className="bottomBar" />
+
             </>
         )
     }
