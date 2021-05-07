@@ -4,21 +4,29 @@ import axios from "axios"
 
 const DISASTERS = ["Natural", "Disease"];
 
-const reactData = "Cancer"
-const url = "localhost:4000/api/users/register";
+const url = "http://localhost:3000/Report";
 
 var display;
 var response;
 var disaster = "Cancer";
 
-class Report extends Component {
-    
-    sendData = () => {
-        axios.post(url, reactData)
-           .then(res => console.log('Data send'))
-           .catch(err => console.log(err.data))
+axios.post('/',function(req,res){
+    sendData(req,res,function(err) {
+        if(err) {
+            return res.end("Error uploading file.");
         }
-        
+        res.end("File is uploaded");
+    });
+});
+
+let sendData = () => {
+    axios.post(url, disaster)
+       .then(res => console.log(res.data))
+       .catch(err => console.log("errrrooo"))
+    }
+    sendData();
+class Report extends Component {
+
     constructor(props) {
         super(props);
         this.state = {

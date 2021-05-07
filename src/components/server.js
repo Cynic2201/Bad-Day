@@ -27,7 +27,6 @@ const app = express();
 const port = process.env.PORT || 5000;
 //Import PythonShell module.
 const {PythonShell} =require('python-shell');
-const { default: Report } = require("./components/Report");
 
 app.use(cors());
 app.use(express.json());
@@ -41,7 +40,7 @@ connection.once('open', () => {
 
 // placeholders
 state = "California"
-disaster = "sss";
+disaster = "Cancer";
 
 
 app.get("/", (req, res, next)=>{
