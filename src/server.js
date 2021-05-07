@@ -27,7 +27,6 @@ const app = express();
 const port = process.env.PORT || 5000;
 //Import PythonShell module.
 const {PythonShell} =require('python-shell');
-const { default: Report } = require("./components/Report");
 
 app.use(cors());
 app.use(express.json());
@@ -41,8 +40,8 @@ connection.once('open', () => {
 
 // placeholders
 state = "California"
-disaster = "sss";
-
+disaster = "Covid";
+disaster2 = "Cancer";
 
 app.get("/", (req, res, next)=>{
     //Here are the option object in which arguments can be passed for the python_test.js.
@@ -52,7 +51,6 @@ app.get("/", (req, res, next)=>{
         args: [disaster, state] //Argument (sys.argv[1])
     };
       
-  
     PythonShell.run('FindDisease.py', options, function (err, result){
           if (err) throw err;
           res.send(result)

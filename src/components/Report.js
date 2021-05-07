@@ -41,7 +41,7 @@ class Report extends Component {
           .then(res => res.json())
           .then(
             (result) => {
-                display = parseFloat(result)
+                display = result
               this.setState({
                 isLoaded: true,
                 items: result.items
