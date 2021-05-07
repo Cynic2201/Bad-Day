@@ -3,7 +3,7 @@ import Checkbox from "./Checkbox";
 
 const DISASTERS = ["Natural", "Disease"];
 
-var test;
+var display;
 
 class Report extends Component {
     
@@ -17,11 +17,11 @@ class Report extends Component {
       }
 
       componentDidMount() {
-        fetch("http://localhost:5000/data")
+        fetch("http://localhost:5000/")
           .then(res => res.json())
           .then(
             (result) => {
-                test = parseFloat(result)
+                display = parseFloat(result)
               this.setState({
                 isLoaded: true,
                 items: result.items
@@ -63,8 +63,6 @@ class Report extends Component {
 
     createCheckboxes = () => DISASTERS.map(this.createCheckbox);
     
-    display = () => fetch("http://localhost:5000/data").then(res => res.text()).then(text => console.log(text));
-
     render() {
         return (
             <> 
@@ -91,14 +89,14 @@ class Report extends Component {
                         <label>Natural Disasters :</label><br />
                         <label>Diseases and Illnesses :</label><br />
                     </div>
-                    <div className="rightDiv2">
-                        {this.createCheckboxes()}
-                        <button type="submit">Get Stats</button> 
+                    <div className="rightDiv2" >
+                        <input type="radio" value="Natural" name="gender"/><br/>
+                        <input type="radio" value="Disease" name="gender"/>
                     </div>
                 </form>
                 <body className="reportBody">
                         <label class="info">
-                        {test}
+                        {display}
                         </label><br />
                 </body>
                 <div className="bottomBar" />

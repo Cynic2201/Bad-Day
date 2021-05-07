@@ -1,6 +1,6 @@
 const Checkbox = ({ label }) => (
       <input
-        type="checkbox"
+        type="radio"
         name={label}
         checked={false}
       />
