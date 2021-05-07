@@ -1,11 +1,32 @@
 import React, { Component } from "react";
 import Checkbox from "./Checkbox";
+import axios from "axios"
 
 const DISASTERS = ["Natural", "Disease"];
-var test
 
+const url = "http://localhost:3000/Report";
+
+var display;
+var response;
+var disaster = "Cancer";
+
+axios.post('/',function(req,res){
+    sendData(req,res,function(err) {
+        if(err) {
+            return res.end("Error uploading file.");
+        }
+        res.end("File is uploaded");
+    });
+});
+
+let sendData = () => {
+    axios.post(url, disaster)
+       .then(res => console.log(res.data))
+       .catch(err => console.log("errrrooo"))
+    }
+    sendData();
 class Report extends Component {
-    
+
     constructor(props) {
         super(props);
         this.state = {
@@ -20,7 +41,7 @@ class Report extends Component {
           .then(res => res.json())
           .then(
             (result) => {
-                test = parseFloat(result)
+                display = result
               this.setState({
                 isLoaded: true,
                 items: result.items
@@ -62,8 +83,6 @@ class Report extends Component {
 
     createCheckboxes = () => DISASTERS.map(this.createCheckbox);
     
-    display = () => fetch("http://localhost:5000/").then(res => res.text()).then(text => console.log(text));
-
     render() {
         return (
             <> 
@@ -90,17 +109,18 @@ class Report extends Component {
                         <label>Natural Disasters :</label><br />
                         <label>Diseases and Illnesses :</label><br />
                     </div>
-                    <div className="rightDiv2">
-                        {this.createCheckboxes()}
-                        <button type="submit">Get Stats</button>
+                    <div className="rightDiv2" >
+                        <input type="radio" value="Natural" name="gender"/><br/>
+                        <input type="radio" value="Disease" name="gender"/>
                     </div>
                 </form>
                 <body className="reportBody">
                         <label class="info">
-                        {test}
+                        {display}
                         </label><br />
                 </body>
                 <div className="bottomBar" />
+
             </>
         )
     }
