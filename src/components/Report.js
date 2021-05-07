@@ -1,12 +1,24 @@
 import React, { Component } from "react";
 import Checkbox from "./Checkbox";
+import axios from "axios"
 
 const DISASTERS = ["Natural", "Disease"];
 
+const reactData = "Cancer"
+const url = "localhost:4000/api/users/register";
+
 var display;
+var response;
+var disaster = "Cancer";
 
 class Report extends Component {
     
+    sendData = () => {
+        axios.post(url, reactData)
+           .then(res => console.log('Data send'))
+           .catch(err => console.log(err.data))
+        }
+        
     constructor(props) {
         super(props);
         this.state = {

@@ -1,3 +1,13 @@
+const url = "localhost:4000/api/users/register";
+const usersData= [];
+
+let getData = () => {
+axios.get(url)
+   .then(res => usersData.push(res.data))
+   .catch(err => console.log(err.data))
+}
+
+
 const express = require('express');
 const cors = require('cors');
 const mongoose = require ('mongoose');
@@ -20,7 +30,7 @@ connection.once('open', () => {
 })
 
 // placeholders
-disaster = "Cancer"
+disaster = "Cancer";
 state = "California"
 
 app.get("/", (req, res, next)=>{
