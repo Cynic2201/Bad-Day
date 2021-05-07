@@ -1,3 +1,4 @@
+const { response } = require('express')
 const express = require('express')
 const exprouter = express.Router()
 const userSchemaData = require('../models/users.model')
@@ -17,6 +18,13 @@ exprouter.post('/Signup', (request, response) =>{
     })
     .catch(error =>{
         response.json(error)
+    })
+})
+
+exprouter.post('/signin', (request, response) => {
+    userSchemaData.findOne({
+        email: request.body.email,
+        password: request.body.password
     })
 })
 

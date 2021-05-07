@@ -10,13 +10,18 @@ class LoginSignup extends Component {
             firstName:'',
             lastName:'',
             email:'',
-            password:''
+            password:'',
+            signinemail:'',
+            signinpassword:''
         }
         this.changefirstName = this.changefirstName.bind(this)
         this.changelastName = this.changelastName.bind(this)
         this.changeemail = this.changeemail.bind(this)
         this.changepassword = this.changepassword.bind(this)
-        this.onSubmitform = this.onSubmitform.bind(this)
+        this.onSubmitrightform = this.onSubmitrightform.bind(this)
+        this.changesigninemail = this.changesigninemail.bind(this)
+        this.changesigninpassword = this.changesigninpassword.bind(this)
+        this.onSubmitleftform = this.onSubmitleftform.bind(this)
     }
 
     changefirstName(event){
@@ -39,11 +44,22 @@ class LoginSignup extends Component {
             email:event.target.value
         })
     }
-    onSubmitform(event){
+    changesigninemail(event){
+        this.setState({
+            signinemail:event.target.value
+        })
+    }
+    changesigninpassword(event){
+        this.setState({
+            signinpassword:event.target.value
+        })
+    }
+
+
+    onSubmitrightform(event){
         event.preventDefault()
         
         const registerd = {
-            
             firstName:this.state.firstName,
             lastName:this.state.lastName,
             email:this.state.email,
@@ -53,9 +69,21 @@ class LoginSignup extends Component {
         axios.post('http://localhost:5000/app/Signup', registerd)
         .then(response => console.log(response.data))
 
-        window.location= '/'
+        console.log(registerd)
+        //window.location= '/'
     }
+    onSubmitleftform(event){
+        event.preventDefault()
 
+        const registered = {
+            email:this.state.signinemail,
+            password:this.state.signinpassword
+        }
+
+        axios.post('http://localhost:5000/app/signin', registered)
+        .then(response => console.log(response.data))
+
+    }
 
 
     render() {
@@ -67,7 +95,7 @@ class LoginSignup extends Component {
         </head>
 
         <body>
-            <form class = "alignForm">
+            <form class = "alignForm" onSubmit = {this.onSubmitleftform}>
                 <div class = "center">
                 <div class="leftDiv">
                     <b><label for="login">Login</label></b><br></br>
@@ -78,8 +106,8 @@ class LoginSignup extends Component {
 
                 <div class="inputRightDiv">
                     <br></br>
-                    <input type="text" id="email" name="email"></input><br></br>
-                    <input type="text" id="password" name="password"></input><br></br>
+                    <input type="text" id="email" name="email" onChange = {this.changesigninemail} value = {this.state.signinemail}></input><br></br>
+                    <input type="text" id="password" name="password"onChange = {this.changesigninpassword} value = {this.state.signinpassword}></input><br></br>
                     <Link to="/Report">
                     <input type="submit" value="Login"></input><br></br>
                     </Link>
@@ -87,7 +115,7 @@ class LoginSignup extends Component {
                 </div>
             </form>
 
-            <form class = "alignForm" id="signupForm" onSubmit = {this.onSubmitform}>
+            <form class = "alignForm" id="signupForm" onSubmit = {this.onSubmitrightform}>
                 <div class="leftDiv">
                     <b><label for="signup">Sign-up</label></b><br></br>
                     <label for="fname">First Name:</label><br></br>
