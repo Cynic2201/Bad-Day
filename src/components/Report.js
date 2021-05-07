@@ -2,8 +2,6 @@ import React, { Component } from "react";
 import Checkbox from "./Checkbox";
 import axios from "axios"
 
-const DISASTERS = ["Natural", "Disease"];
-
 const url = "http://localhost:3000/Report";
 
 var display;
@@ -30,12 +28,49 @@ class Report extends Component {
     constructor(props) {
         super(props);
         this.state = {
-          error: null,
-          isLoaded: false,
-          items: []
-        };
+            stateUS:'',
+            disaster:'',
+            type:''
+        }
+        this.changestateUS = this.changestatsUS.bind(this)
+        this.changedisaster = this.changedisaster.bind(this)
+        this.changetype = this.changetype.bind(this)
       }
 
+      changestateUS(event){
+        this.setState({
+            stateUS:event.target.value
+        })
+    }
+  
+      changedisaster(event){
+        this.setState({
+            disaster:event.target.value
+        })
+    }
+        
+      changetype(event){
+        this.setState({
+            type:event.target.value
+        })
+    }
+
+    onSubmitform(event){
+        event.preventDefault()
+        
+        const registerd = {
+            
+            stateUS:this.state.stateUS,
+            disaster:this.state.disaster,
+            type:this.state.type,
+        }
+
+        axios.post('http://localhost:5000/app/info', registerd)
+        .then(response => console.log(response.data))
+
+        window.location= '/'
+        //console.log(registerd)
+      }
       componentDidMount() {
         fetch("http://localhost:5000/")
           .then(res => res.json())

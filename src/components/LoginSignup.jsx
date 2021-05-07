@@ -54,6 +54,7 @@ class LoginSignup extends Component {
         .then(response => console.log(response.data))
 
         window.location= '/'
+        //console.log(registerd)
     }
 
 
