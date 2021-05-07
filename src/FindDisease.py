@@ -17,6 +17,7 @@ import sys
 file =('US_FIPS_Codes.xls')
 state_df = pd.read_excel(file, header=1)
 
+returnstring = ""
 disease = sys.argv[1]
 stateName = sys.argv[2]
 
@@ -47,15 +48,15 @@ url = "https://data.cdc.gov/resource/muzy-jte6.csv?jurisdiction_of_occurrence={}
 data_df = pd.read_csv(url, usecols=list(disease_df['columns']))
 #print(disease_df)
 
-
-value = disease_df[disease_df['Name'].str.match(disease)].iloc[0]['columns']
-
-deaths = data_df[value].sum()
-
 host = "https://api.census.gov/data/2019/pep/charagegroups?get=POP&for=state:{}".format(stateFIPS)
 df = pd.read_json(host)
 state_pop = int(df.iloc[1][0]);
 
-disease_stat = (deaths*state_pop**-1)*100
+for (columnName, columnData) in data_df.iteritems():
+    a = columnData.values.sum()
+    stat = str((a / state_pop) * 100)
+    stat += ", "
+    returnstring += stat
+    
+print(returnstring)
 
-print(disease_stat)
