@@ -5,17 +5,9 @@ import axios from "axios"
 const url = "http://localhost:3000/Report";
 
 var display;
+var serverInfo;
 var response;
 var disaster = "Cancer";
-
-axios.post('/',function(req,res){
-    sendData(req,res,function(err) {
-        if(err) {
-            return res.end("Error uploading file.");
-        }
-        res.end("File is uploaded");
-    });
-});
 
 let sendData = () => {
     axios.post(url, disaster)
@@ -24,7 +16,67 @@ let sendData = () => {
     }
     sendData();
 
-    function createInfo(disasterInfo) {
+class Report extends Component {
+
+    constructor(props) {
+        super()
+        this.state = {
+            stateUS:'',
+            disaster:'',
+         
+        }
+        this.changestateUS = this.changestateUS.bind(this)
+        this.changedisaster = this.changedisaster.bind(this)
+        this.onSubmitform = this.onSubmitform.bind(this)
+      }
+
+      changestateUS(event){
+        this.setState({
+            stateUS:event.target.value
+        })
+    }
+  
+      changedisaster(event){
+        this.setState({
+            disaster:event.target.value
+        })
+    }
+        
+    
+
+    onSubmitform(event){
+        event.preventDefault()
+        
+        const registerd = {
+            
+            stateUS:this.state.stateUS,
+            disaster:this.state.disaster,
+            
+        }
+      }
+
+      componentDidMount() {
+        fetch("http://localhost:5000/")
+          .then(res => res.json())
+          .then(
+            (result) => {
+                serverInfo = result
+                console.log(serverInfo + "     hello wurld");
+              this.setState({
+                isLoaded: true,
+                items: result.items
+              });
+            },
+            (error) => {
+              this.setState({
+                isLoaded: true,
+                error
+              });
+            }
+          )
+      }
+
+      /*createInfo(disasterInfo) {
         //This method will slice part of the string and shove it into the info variable
         var info = disasterInfo.slice(0, disasterInfo.indexOf(','));
         //Edit the disasterInfo string so that the sliced bit is taken off
@@ -69,7 +121,7 @@ let sendData = () => {
         disasterInfo = disasterInfo.slice(disasterInfo.indexOf(',')+1);
         info9.replaceAll(',','');
 
-        return <div>
+        display = <div>
         <p>Disaster: Sepsis. Chance of death: {info}</p><br />
         <p>Disaster: Cancer. Chance of death: {info1}</p><br />
         <p>Disaster: Diabetes. Chance of death: {info2}</p><br />
@@ -81,71 +133,7 @@ let sendData = () => {
         <p>Disaster: Stroke. Chance of death: {info8}</p><br />
         <p>Disaster: Covid. Chance of death: {info9}</p><br />
          </div>;
-}
-
-class Report extends Component {
-
-    constructor(props) {
-        super()
-        this.state = {
-            stateUS:'',
-            disaster:'',
-         
-        }
-        this.changestateUS = this.changestateUS.bind(this)
-        this.changedisaster = this.changedisaster.bind(this)
-        this.onSubmitform = this.onSubmitform.bind(this)
-      }
-
-      changestateUS(event){
-        this.setState({
-            stateUS:event.target.value
-        })
-    }
-  
-      changedisaster(event){
-        this.setState({
-            disaster:event.target.value
-        })
-    }
-        
-    
-
-    onSubmitform(event){
-        event.preventDefault()
-        
-        const registerd = {
-            
-            stateUS:this.state.stateUS,
-            disaster:this.state.disaster,
-            
-        }
-
-        axios.post('http://localhost:5000/app/info', registerd)
-        .then(response => console.log(response.data))
-
-        window.location= '/'
-        //console.log(registerd)
-      }
-      componentDidMount() {
-        fetch("http://localhost:5000/")
-          .then(res => res.json())
-          .then(
-            (result) => {
-                display = result
-              this.setState({
-                isLoaded: true,
-                items: result.items
-              });
-            },
-            (error) => {
-              this.setState({
-                isLoaded: true,
-                error
-              });
-            }
-          )
-      }
+}*/
       
     handleCheckboxSubmit = formSubmitEvent => {
         formSubmitEvent.preventDefault();
@@ -203,7 +191,7 @@ class Report extends Component {
                             <option>Stroke</option>
                             <option>Covid</option>
                         </select><br />
-                        <input type="submit" id="centerButton" value="Save Profile" />
+                        <input type="submit" id="centerButton" value="Submit" /*onClick = {this.createInfo(serverInfo)}*/ />
                     </div>
                 </form>
                 <form className="alignForm">
@@ -218,7 +206,7 @@ class Report extends Component {
                 </form>
                 <body className="reportBody">
                         <label class="info">
-                        {createInfo("1,2,3,4,5,6,7,8,9,0")}
+                        {display}
                         </label><br />
                 </body>
                 <div className="bottomBar" />
