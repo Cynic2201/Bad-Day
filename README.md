@@ -8,8 +8,6 @@ npm install --save bootstrap
 
 
 # Installs and to start the server
-# We currently have the MongoDB database closed off to other IP so it may cause an error, but we were not able to have it implemented and it will not cause problem in running the app
-cd backend
 npm install -g nodemon
 npm install dotenv
 npm install cors
@@ -18,7 +16,9 @@ pip install xlrd
 pip install pandas
 npm install express
 npm install mongoose
-nodemonserver.js
+npm install axios
+cd src
+nodemon server.js
 
 # Head back to the main directory and start the app
 cd ..
