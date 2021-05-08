@@ -20,9 +20,10 @@ axios.post('/',function(req,res){
 let sendData = () => {
     axios.post(url, disaster)
        .then(res => console.log(res.data))
-       .catch(err => console.log("errrrooo"))
+       .catch(err => console.log("error"))
     }
     sendData();
+
 class Report extends Component {
 
     constructor(props) {
@@ -115,8 +116,6 @@ class Report extends Component {
             <br />
         </>
     );
-
-    createCheckboxes = () => DISASTERS.map(this.createCheckbox);
     
     render() {
         return (
@@ -124,10 +123,10 @@ class Report extends Component {
             <h2 class="title">John Doe</h2>
                 <form className="alignForm">
                     <div className="leftDiv">
-                        <label>Select Profile :</label><br/>
                         <label>Profile Name :</label><br/>
                         <label>Age :</label><br/>
-                        <label>Location :</label><br/>
+                        <label>State :</label><br/>
+                        <label>Disaster :</label>
                     </div>
                     <div className="rightDiv">
                         <select id="selectProfile">
@@ -135,7 +134,19 @@ class Report extends Component {
                         </select><br/>
                         <input type="text" placeholder="name"/><br/>
                         <input type="text" placeholder="age"/><br/>
-                        <input type="text" placeholder="location"/><br/>
+                        <input type="text" placeholder="state"/><br/>
+                        <select id="selectDisaster">
+                            <option>Sepsis</option>
+                            <option>Cancer</option>
+                            <option>Diabetes</option>
+                            <option>Alzheimers</option>
+                            <option>Flu</option>
+                            <option>CLRD</option>
+                            <option>Kidney Disease</option>
+                            <option>Heart Disease</option>
+                            <option>Stroke</option>
+                            <option>Covid</option>
+                        </select><br />
                         <input type="submit" id="centerButton" value="Save Profile" />
                     </div>
                 </form>
