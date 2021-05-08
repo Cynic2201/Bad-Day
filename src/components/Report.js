@@ -23,6 +23,66 @@ let sendData = () => {
        .catch(err => console.log("errrrooo"))
     }
     sendData();
+
+    function createInfo(disasterInfo) {
+        //This method will slice part of the string and shove it into the info variable
+        var info = disasterInfo.slice(0, disasterInfo.indexOf(','));
+        //Edit the disasterInfo string so that the sliced bit is taken off
+        disasterInfo = disasterInfo.slice(disasterInfo.indexOf(',')+1);
+        //Remove commas
+        info.replaceAll(',','');
+        //repeat until all 10 stats have been taken
+
+        var info1 = disasterInfo.slice(0, disasterInfo.indexOf(','));
+        disasterInfo = disasterInfo.slice(disasterInfo.indexOf(',')+1);
+        info1.replaceAll(',','');
+        
+        var info2 = disasterInfo.slice(0, disasterInfo.indexOf(','));
+        disasterInfo = disasterInfo.slice(disasterInfo.indexOf(',')+1);
+        info2.replaceAll(',','');
+
+        var info3 = disasterInfo.slice(0, disasterInfo.indexOf(','));
+        disasterInfo = disasterInfo.slice(disasterInfo.indexOf(',')+1);
+        info3.replaceAll(',','');
+
+        var info4 = disasterInfo.slice(0, disasterInfo.indexOf(','));
+        disasterInfo = disasterInfo.slice(disasterInfo.indexOf(',')+1);
+        info4.replaceAll(',','');
+
+        var info5 = disasterInfo.slice(0, disasterInfo.indexOf(','));
+        disasterInfo = disasterInfo.slice(disasterInfo.indexOf(',')+1);
+        info5.replaceAll(',','');
+
+        var info6 = disasterInfo.slice(0, disasterInfo.indexOf(','));
+        disasterInfo = disasterInfo.slice(disasterInfo.indexOf(',')+1);
+        info6.replaceAll(',','');
+
+        var info7 = disasterInfo.slice(0, disasterInfo.indexOf(','));
+        disasterInfo = disasterInfo.slice(disasterInfo.indexOf(',')+1);
+        info7.replaceAll(',','');
+
+        var info8 = disasterInfo.slice(0, disasterInfo.indexOf(','));
+        disasterInfo = disasterInfo.slice(disasterInfo.indexOf(',')+1);
+        info8.replaceAll(',','');
+
+        var info9 = disasterInfo.slice(0, 1);
+        disasterInfo = disasterInfo.slice(disasterInfo.indexOf(',')+1);
+        info9.replaceAll(',','');
+
+        return <div>
+        <p>Disaster: Sepsis. Chance of death: {info}</p><br />
+        <p>Disaster: Cancer. Chance of death: {info1}</p><br />
+        <p>Disaster: Diabetes. Chance of death: {info2}</p><br />
+        <p>Disaster: Alzheimers. Chance of death: {info3}</p><br />
+        <p>Disaster: Flu. Chance of death: {info4}</p><br />
+        <p>Disaster: CLRD. Chance of death: {info5}</p><br />
+        <p>Disaster: Kidney Disease. Chance of death: {info6}</p><br />
+        <p>Disaster: Heart Disease. Chance of death: {info7}</p><br />
+        <p>Disaster: Stroke. Chance of death: {info8}</p><br />
+        <p>Disaster: Covid. Chance of death: {info9}</p><br />
+         </div>;
+}
+
 class Report extends Component {
 
     constructor(props) {
@@ -158,7 +218,7 @@ class Report extends Component {
                 </form>
                 <body className="reportBody">
                         <label class="info">
-                        {display}
+                        {createInfo("1,2,3,4,5,6,7,8,9,0")}
                         </label><br />
                 </body>
                 <div className="bottomBar" />
