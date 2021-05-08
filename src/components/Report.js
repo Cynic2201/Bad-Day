@@ -26,15 +26,15 @@ let sendData = () => {
 class Report extends Component {
 
     constructor(props) {
-        super(props);
+        super()
         this.state = {
             stateUS:'',
             disaster:'',
-            type:''
+         
         }
-        this.changestateUS = this.changestatsUS.bind(this)
+        this.changestateUS = this.changestateUS.bind(this)
         this.changedisaster = this.changedisaster.bind(this)
-        this.changetype = this.changetype.bind(this)
+        this.onSubmitform = this.onSubmitform.bind(this)
       }
 
       changestateUS(event){
@@ -49,11 +49,7 @@ class Report extends Component {
         })
     }
         
-      changetype(event){
-        this.setState({
-            type:event.target.value
-        })
-    }
+    
 
     onSubmitform(event){
         event.preventDefault()
@@ -62,7 +58,7 @@ class Report extends Component {
             
             stateUS:this.state.stateUS,
             disaster:this.state.disaster,
-            type:this.state.type,
+            
         }
 
         axios.post('http://localhost:5000/app/info', registerd)
@@ -116,13 +112,12 @@ class Report extends Component {
         </>
     );
 
-    createCheckboxes = () => DISASTERS.map(this.createCheckbox);
     
     render() {
         return (
             <> 
             <h2 class="title">John Doe</h2>
-                <form className="alignForm">
+                <form className="alignForm" onSubmit = {this.onSubmit}>
                     <div className="leftDiv">
                         <label>Select Profile :</label><br/>
                         <label>Profile Name :</label><br/>
@@ -136,7 +131,7 @@ class Report extends Component {
                         <input type="text" placeholder="name"/><br/>
                         <input type="text" placeholder="age"/><br/>
                         <input type="text" placeholder="location"/><br/>
-                        <input type="submit" id="centerButton" value="Save Profile" />
+                        <input type="submit" id="centerButton" value="Save Profile"  />
                     </div>
                 </form>
                 <form className="alignForm">
@@ -146,7 +141,7 @@ class Report extends Component {
                     </div>
                     <div className="rightDiv2" >
                         <input type="radio" value="Natural" name="gender"/><br/>
-                        <input type="radio" value="Disease" name="gender"/>
+                        <input type="radio" value="Disease" name="gender" />
                     </div>
                 </form>
                 <body className="reportBody">
