@@ -11,24 +11,6 @@ const port = process.env.PORT;
 //Import PythonShell module.
 const {PythonShell} =require('python-shell');
 
-// placeholders
-disaster = "Cancer"
-state = "California"
-
-app.get("/", (req, res, next)=>{
-    //Here are the option object in which arguments can be passed for the python_test.js.
-    let options = {
-        mode: 'text',
-        pythonOptions: ['-u'], // get print results in real-time
-        args: [disaster, state] //Argument (sys.argv[1])
-    };
-      
-  
-    PythonShell.run('FindDisease.py', options, function (err, result){
-          if (err) throw err;
-          res.send(result)
-    });
-});
 
 
 

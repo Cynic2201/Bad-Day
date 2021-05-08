@@ -117,12 +117,12 @@ class Report extends Component {
         return (
             <> 
             <h2 class="title">John Doe</h2>
-                <form className="alignForm" onSubmit = {this.onSubmit}>
+                <form className="alignForm">
                     <div className="leftDiv">
-                        <label>Select Profile :</label><br/>
                         <label>Profile Name :</label><br/>
                         <label>Age :</label><br/>
-                        <label>Location :</label><br/>
+                        <label>State :</label><br/>
+                        <label>Disaster :</label>
                     </div>
                     <div className="rightDiv">
                         <select id="selectProfile">
@@ -130,8 +130,20 @@ class Report extends Component {
                         </select><br/>
                         <input type="text" placeholder="name"/><br/>
                         <input type="text" placeholder="age"/><br/>
-                        <input type="text" placeholder="location"/><br/>
-                        <input type="submit" id="centerButton" value="Save Profile"  />
+                        <input type="text" placeholder="state"/><br/>
+                        <select id="selectDisaster">
+                            <option>Sepsis</option>
+                            <option>Cancer</option>
+                            <option>Diabetes</option>
+                            <option>Alzheimers</option>
+                            <option>Flu</option>
+                            <option>CLRD</option>
+                            <option>Kidney Disease</option>
+                            <option>Heart Disease</option>
+                            <option>Stroke</option>
+                            <option>Covid</option>
+                        </select><br />
+                        <input type="submit" id="centerButton" value="Save Profile" />
                     </div>
                 </form>
                 <form className="alignForm">
@@ -141,7 +153,7 @@ class Report extends Component {
                     </div>
                     <div className="rightDiv2" >
                         <input type="radio" value="Natural" name="gender"/><br/>
-                        <input type="radio" value="Disease" name="gender" />
+                        <input type="radio" value="Disease" name="gender"/>
                     </div>
                 </form>
                 <body className="reportBody">
