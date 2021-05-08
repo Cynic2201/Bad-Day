@@ -2,9 +2,12 @@ import axios from "axios";
 import React, { Component } from "react";
 import Checkbox from "./Checkbox";
 
+// const express = require('express');
+
 const DISASTERS = ["Natural", "Disease"];
 
-var test;
+var disasterInfo;
+var giraffe;
 
 class Report extends Component {
     
@@ -22,7 +25,7 @@ class Report extends Component {
           .then(res => res.json())
           .then(
             (result) => {
-                test = parseFloat(result)
+                disasterInfo = result
               this.setState({
                 isLoaded: true,
                 items: result.items
@@ -36,6 +39,8 @@ class Report extends Component {
             }
           )
       }
+      
+
       
     handleCheckboxSubmit = formSubmitEvent => {
         formSubmitEvent.preventDefault();
@@ -69,6 +74,7 @@ class Report extends Component {
     render() {
         return (
             <> 
+
             <h2 class="title">John Doe</h2>
                 <form className="alignForm">
                     <div className="leftDiv">
@@ -94,33 +100,78 @@ class Report extends Component {
                     </div>
                     <div className="rightDiv2">
                         {this.createCheckboxes()}
-                        <button onClick="sss()">Get Stats</button> 
+                        <button onClick={() => this.sss()}>Get Stats</button> 
                     </div>
                 </form>
-                <body className="reportBody">
+                <body className="reportBody" id = "why">
                         <label class="info">
-                        {test}
+                        {disasterInfo}
                         </label><br />
                 </body>
-                <div className="bottomBar" />
-
-                <script>
-
-                </script>
+                <div className="bottomBar"/>
 
             </>
-        )
+        ) 
     }
 
-
     sss(){
-        const data = {
-            username: document.getElementById('Disaster').value,
-            password: document.getElementById('State').value,
-        };
-        axios.post('/giraffe', data)}
+        // console.log("test: " + disasterInfo)
+        // document.getElementById('Disaster').value = disasterInfo;
+
+        // var info = disasterInfo.slice(0, disasterInfo.indexOf(','));
+        // //Edit the disasterInfo string so that the sliced bit is taken off
+        // disasterInfo = disasterInfo.slice(disasterInfo.indexOf(',')+1);
+        // //Remove commas
+        // info.replaceAll(',','');
+        
 
 
+
+        //repeat until all 10 stats have been taken
+        // var info1 = disasterInfo.slice(0, disasterInfo.indexOf(','));
+        // disasterInfo = disasterInfo.slice(disasterInfo.indexOf(',')+1);
+        // info1.replaceAll(',','');
+        
+        // var info2 = disasterInfo.slice(0, disasterInfo.indexOf(','));
+        // disasterInfo = disasterInfo.slice(disasterInfo.indexOf(',')+1);
+        // info2.replaceAll(',','');
+        // info3 = disasterInfo.slice(0, disasterInfo.indexOf(','));
+        // disasterInfo = disasterInfo.slice(disasterInfo.indexOf(',')+1);
+        // info3.replaceAll(',','');
+        // var info4 = disasterInfo.slice(0, disasterInfo.indexOf(','));
+        // disasterInfo = disasterInfo.slice(disasterInfo.indexOf(',')+1);
+        // info4.replaceAll(',','');
+        // var info5 = disasterInfo.slice(0, disasterInfo.indexOf(','));
+        // disasterInfo = disasterInfo.slice(disasterInfo.indexOf(',')+1);
+        // info5.replaceAll(',','');
+        // var info6 = disasterInfo.slice(0, disasterInfo.indexOf(','));
+        // disasterInfo = disasterInfo.slice(disasterInfo.indexOf(',')+1);
+        // info6.replaceAll(',','');
+        // var info7 = disasterInfo.slice(0, disasterInfo.indexOf(','));
+        // disasterInfo = disasterInfo.slice(disasterInfo.indexOf(',')+1);
+        // info7.replaceAll(',','');
+        // var info8 = disasterInfo.slice(0, disasterInfo.indexOf(','));
+        // disasterInfo = disasterInfo.slice(disasterInfo.indexOf(',')+1);
+        // info8.replaceAll(',','');
+        // var info9 = disasterInfo.slice(0, 1);
+        // disasterInfo = disasterInfo.slice(disasterInfo.indexOf(',')+1);
+        // info9.replaceAll(',','');
+
+
+        // giraffe = <div>
+        // <p>Disaster: Sepsis. Chance of death: {info}</p><br />
+        // <p>Disaster: Cancer. Chance of death: {info1}</p><br />
+        // <p>Disaster: Diabetes. Chance of death: {info2}</p><br />
+        // <p>Disaster: Alzheimers. Chance of death: {info3}</p><br />
+        // <p>Disaster: Flu. Chance of death: {info4}</p><br />
+        // <p>Disaster: CLRD. Chance of death: {info5}</p><br />
+        // <p>Disaster: Kidney Disease. Chance of death: {info6}</p><br />
+        // <p>Disaster: Heart Disease. Chance of death: {info7}</p><br />
+        // <p>Disaster: Stroke. Chance of death: {info8}</p><br />
+        // <p>Disaster: Covid. Chance of death: {info9}</p><br />
+        //  </div>;
+
+    }
 }
 
 export default Report;
