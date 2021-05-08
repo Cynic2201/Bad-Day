@@ -13,13 +13,14 @@ Created on Sun Mar 28 15:18:12 2021
 """
 import pandas as pd
 import sys
+import json
+
 
 file =('US_FIPS_Codes.xls')
 state_df = pd.read_excel(file, header=1)
 
+stateName = "California"
 returnstring = ""
-disease = sys.argv[1]
-stateName = sys.argv[2]
 
 data = [
         ['septicemia_a40_a41', 'Sepsis'],
@@ -46,17 +47,35 @@ stateName = stateName.replace(" ", "+")
 
 url = "https://data.cdc.gov/resource/muzy-jte6.csv?jurisdiction_of_occurrence={}&mmwryear=2020".format(stateName);
 data_df = pd.read_csv(url, usecols=list(disease_df['columns']))
-#print(disease_df)
+#print(data_df)
 
 host = "https://api.census.gov/data/2019/pep/charagegroups?get=POP&for=state:{}".format(stateFIPS)
 df = pd.read_json(host)
 state_pop = int(df.iloc[1][0]);
 
+giraffe = [2, 4, 6, 8, 10, 6, 6, 8, 9, 19]
+
+n = 0;
+
 for (columnName, columnData) in data_df.iteritems():
     a = columnData.values.sum()
     stat = str((a / state_pop) * 100)
-    stat += ", "
-    returnstring += stat
-    
-print(returnstring)
+    giraffe[n] = stat
+    n = n + 1;
 
+x = {
+  "Sepsis": giraffe[0],
+  "Cancer": giraffe[1],
+  "Diabetes": giraffe[2],
+  "Alzheimer": giraffe[3],
+  "Flu": giraffe[4],
+  "CLRD": giraffe[5],
+  "Kidney Disease": giraffe[6],
+  "Heart Disease": giraffe[7],
+  "Stroke": giraffe[8],
+  "Covid": giraffe[9]
+}
+
+
+
+print(json.dumps(x))
