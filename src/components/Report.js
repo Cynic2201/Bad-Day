@@ -61,7 +61,7 @@ class Report extends Component {
             
         }
 
-        axios.post('http://localhost:5000/app/info', registerd)
+        axios.get('http://localhost:5000/app/info')
         .then(response => console.log(response.data))
 
         window.location= '/'
@@ -117,7 +117,7 @@ class Report extends Component {
         return (
             <> 
             <h2 class="title">John Doe</h2>
-                <form className="alignForm">
+                <form className="alignForm" onSubmit = {this.onSubmit}>
                     <div className="leftDiv">
                         <label>Profile Name :</label><br/>
                         <label>Age :</label><br/>
@@ -130,8 +130,8 @@ class Report extends Component {
                         </select><br/>
                         <input type="text" placeholder="name"/><br/>
                         <input type="text" placeholder="age"/><br/>
-                        <input type="text" placeholder="state"/><br/>
-                        <select id="selectDisaster">
+                        <input type="text" placeholder="state" onChange = {this.changestateUS}/><br/>
+                        <select id="selectDisaster" onChange = {this.changedisaster}>
                             <option>Sepsis</option>
                             <option>Cancer</option>
                             <option>Diabetes</option>
@@ -142,6 +142,7 @@ class Report extends Component {
                             <option>Heart Disease</option>
                             <option>Stroke</option>
                             <option>Covid</option>
+                            
                         </select><br />
                         <input type="submit" id="centerButton" value="Save Profile" />
                     </div>

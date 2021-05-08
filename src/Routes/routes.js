@@ -31,12 +31,14 @@ exprouter.post('/signin', (request, response) => {
 
 exprouter.get("/info", (req, res, next)=>{
     //Here are the option object in which arguments can be passed for the python_test.js.
-    
+    disaster ="Cancer"
+    state = "California"
+
     let options = {
         mode: 'text',
         pythonOptions: ['-u'], // get print results in real-time
-        disaster:request.body.disaster,
-        state:request.body.state,
+        
+        
         args: [disaster, state] //Argument (sys.argv[1])
     };
       
